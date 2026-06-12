@@ -8,6 +8,8 @@ class SignupScreen extends StatelessWidget {
 
   TextEditingController confpassc = TextEditingController();
   final formkey = GlobalKey<FormState>();
+
+  SignupScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(

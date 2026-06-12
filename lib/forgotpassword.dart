@@ -4,6 +4,8 @@ import 'package:welcome/login_screen.dart';
 class Forgotpassword extends StatelessWidget {
   TextEditingController emailc = TextEditingController();
   final formkey = GlobalKey<FormState>();
+
+  Forgotpassword({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
