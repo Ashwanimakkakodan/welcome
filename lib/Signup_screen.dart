@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:welcome/login_screen.dart';
+import 'package:welcome/service.dart';
 
 class SignupScreen extends StatelessWidget {
   TextEditingController userc = TextEditingController();
@@ -109,7 +110,7 @@ class SignupScreen extends StatelessWidget {
                   child: ElevatedButton(
                     onPressed: () {
                       if (formkey.currentState!.validate()) {
-                        print("Sign Up");
+                        register(userc.text, emailc.text, passc.text, context);
                       }
                     },
 

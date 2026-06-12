@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:welcome/Signup_screen.dart';
 import 'package:welcome/forgotpassword.dart';
+import 'package:welcome/service.dart';
 
 class LoginScreen extends StatelessWidget {
   TextEditingController emailc = TextEditingController();
@@ -87,7 +88,7 @@ class LoginScreen extends StatelessWidget {
                     child: ElevatedButton(
                       onPressed: () {
                         if (formkey.currentState!.validate()) {
-                          print("Login");
+                          login(emailc.text, passc.text, context);
                         }
                       },
                       style: ElevatedButton.styleFrom(

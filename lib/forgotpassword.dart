@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:welcome/login_screen.dart';
+import 'package:welcome/service.dart';
 
 class Forgotpassword extends StatelessWidget {
   TextEditingController emailc = TextEditingController();
@@ -31,6 +32,7 @@ class Forgotpassword extends StatelessWidget {
                   ),
                 ),
                 TextFormField(
+                  controller: emailc,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return "Email is required";
@@ -40,7 +42,7 @@ class Forgotpassword extends StatelessWidget {
                     }
                     return null;
                   },
-                  controller: emailc,
+
                   decoration: InputDecoration(
                     hintText: "Email",
                     fillColor: Colors.white,
@@ -52,7 +54,12 @@ class Forgotpassword extends StatelessWidget {
                 ),
 
                 SizedBox(height: 20),
-                ElevatedButton(onPressed: () {}, child: Text("Recovery Link")),
+                ElevatedButton(
+                  onPressed: () {
+                    forgot(emailc.text, context);
+                  },
+                  child: Text("Recovery Link"),
+                ),
                 GestureDetector(
                   onTap: () {
                     Navigator.push(
